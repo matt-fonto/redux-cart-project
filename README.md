@@ -22,3 +22,4 @@ Meanwhile, the app calculates the totals and displays it to the user.
 * Netlify to host the App
 
 # Final Project Link
+https://sage-dieffenbachia-472fb0.netlify.app/
