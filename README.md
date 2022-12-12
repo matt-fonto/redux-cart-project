@@ -8,7 +8,7 @@ A functional cart created with React/Redux. The idea of the project was to put i
 
 # Project Description
 The app fetches the data from the API through createAsyncThunk. The user is able to:
-1. increase/Decrease the quantity of any item
+1. increase/decrease the quantity of any item
 2. clear the cart -- a modal will appear asking the user to confirm the action
 
 Meanwhile, the app calculates the totals and displays it to the user. 
