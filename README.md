@@ -18,7 +18,7 @@ Meanwhile, the app calculates the totals and displays it to the user.
 
 # Technologies used
 * React to build the App
-* Redux to globally centralized the states in the application 
+* Redux to globally centralize the states in the application 
 * Netlify to host the App
 
 # Final Project Link
