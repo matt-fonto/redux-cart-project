@@ -4,7 +4,7 @@ import cartItems from "../../cartItems";
 // here, we can add the initial state. In this case, we're setting it as a separate object
 const initialState = {
   cartItems: cartItems,
-  amount: 1,
+  amount: 0,
   total: 0,
   isLoading: true,
 };
@@ -37,7 +37,17 @@ const cartSlice = createSlice({
       const cartItem = state.cartItems.find((item) => item.id === payload);
       cartItem.amount = cartItem.amount - 1;
     },
-    // calculateTotals
+    calculateTotals: (state) => {
+      let amount = 0;
+      let total = 0;
+      // we go through our current cartItems
+      state.cartItems.forEach((item) => {
+        amount += item.amount;
+        total += item.amount * item.price; //amount * price
+      });
+      state.amount = amount;
+      state.total = total;
+    },
   },
 });
 
@@ -50,7 +60,8 @@ const cartSlice = createSlice({
 // 5. reducer = what is going to control the state in this slice
 
 // we need to export our reducers, then use in the component we need
-export const { clearCart, removeItem, increase, decrease } = cartSlice.actions; //our reducer functions
+export const { clearCart, removeItem, increase, decrease, calculateTotals } =
+  cartSlice.actions; //our reducer functions
 
 export default cartSlice.reducer;
 // exp default object.property

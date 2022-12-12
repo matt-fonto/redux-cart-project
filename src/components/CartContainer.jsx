@@ -1,8 +1,7 @@
 import React from "react";
 import CartItem from "./CartItem";
 import { useSelector, useDispatch } from "react-redux";
-// we need to import the reducer function we need
-import { clearCart } from "../features/cart/cartSlice";
+import { openModal } from "../features/modal/modalSlice";
 
 const CartContainer = () => {
   const { cartItems, total, amount } = useSelector((store) => store.cart);
@@ -38,12 +37,12 @@ const CartContainer = () => {
         <hr />
         <div className="cart-total">
           <h4>
-            total <span>${total}</span>
+            total <span>${total.toFixed(2)}</span>
           </h4>
         </div>
         {/* then, in our onClick, we call the dispatch, which in turn calls the clearCart reducer */}
         {/* reducer -> the pure functions that contain the logic and calculation needed to be performed on the state */}
-        <button className="btn clear-btn" onClick={() => dispatch(clearCart())}>
+        <button className="btn clear-btn" onClick={() => dispatch(openModal())}>
           clear cart
         </button>
       </footer>
